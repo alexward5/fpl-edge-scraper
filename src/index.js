@@ -1,13 +1,13 @@
 require("dotenv").config();
 const fs = require("fs");
 const shell = require("shelljs");
-const processPlayerStats = require("./scripts/processPlayerStats");
+const processPlayerData = require("./scripts/processPlayerData");
 
 const season = "2020-21";
 
 if (fs.existsSync("./Fantasy-Premier-League")) {
   console.log("FPL DATA ALREADY EXISTS");
-  processPlayerStats(season);
+  processPlayerData(season);
 } else {
   console.log("CLONING REPO");
   shell.exec(
@@ -15,7 +15,7 @@ if (fs.existsSync("./Fantasy-Premier-League")) {
     { async: true },
     () => {
       console.log("FINISHED CLOING REPO!");
-      processPlayerStats(season);
+      processPlayerData(season);
     }
   );
 }
