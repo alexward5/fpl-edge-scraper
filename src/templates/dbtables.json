@@ -1,0 +1,100 @@
+{
+  "player_metadata": {
+    "file_name": "",
+    "table_name": "player_metadata",
+    "columns": [
+      {
+        "column_name": "id",
+        "column_type": "integer",
+        "primary_key": true
+      },
+      {
+        "column_name": "first_name",
+        "column_type": "text"
+      },
+      {
+        "column_name": "second_name",
+        "column_type": "text"
+      }
+    ]
+  },
+  "player_totals": {
+    "file_name": "cleaned_players",
+    "table_name": "player_totals",
+    "columns": [
+      {
+        "column_name": "id",
+        "column_type": "integer",
+        "primary_key": true
+      },
+      {
+        "column_name": "goals_scored",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "assists",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "total_points",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "minutes",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "goals_conceded",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "creativity",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "influence",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "threat",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "bonus",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "bps",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "ict_index",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "clean_sheets",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "red_cards",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "yellow_cards",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "selected_by_percent",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "now_cost",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "element_type",
+        "column_type": "text"
+      }
+    ]
+  }
+}

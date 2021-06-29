@@ -1,21 +1,13 @@
+require("dotenv").config();
 const fs = require("fs");
 const shell = require("shelljs");
-const csvtojson = require("csvtojson");
+const processPlayerStats = require("./scripts/processPlayerStats");
 
-async function processPlayerIds() {
-  const jsonObj = await csvtojson()
-    .fromFile("./Fantasy-Premier-League/data/2020-21/player_idlist.csv")
-    .then((json) => json)
-    .catch((err) =>
-      console.error(`Error converting CSV to JSON: ${err.message}`)
-    );
-
-  console.log(jsonObj);
-}
+const season = "2020-21";
 
 if (fs.existsSync("./Fantasy-Premier-League")) {
   console.log("FPL DATA ALREADY EXISTS");
-  processPlayerIds();
+  processPlayerStats(season);
 } else {
   console.log("CLONING REPO");
   shell.exec(
@@ -23,7 +15,7 @@ if (fs.existsSync("./Fantasy-Premier-League")) {
     { async: true },
     () => {
       console.log("FINISHED CLOING REPO!");
-      processPlayerIds();
+      processPlayerStats(season);
     }
   );
 }
