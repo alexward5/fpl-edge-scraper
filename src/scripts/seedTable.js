@@ -17,7 +17,9 @@ function seedTable(schema, tableName, columnTemplate, jsonString) {
     [],
     (err) => {
       if (err) {
-        console.log(`Error seeding "${schema}".${tableName}: ${err.message}`);
+        throw new Error(
+          `Error seeding "${schema}".${tableName}: ${err.message}`
+        );
       } else {
         console.log(`Successfully seeded "${schema}".${tableName}`);
       }

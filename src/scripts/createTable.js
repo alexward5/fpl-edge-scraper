@@ -17,7 +17,9 @@ function createTable(schema, tableName, columnTemplate) {
     [],
     (err) => {
       if (err) {
-        console.log(`Error creating "${schema}".${tableName}: ${err.message}`);
+        throw new Error(
+          `Error creating "${schema}".${tableName}: ${err.message}`
+        );
       } else {
         console.log(`Successfully created "${schema}".${tableName}`);
       }
