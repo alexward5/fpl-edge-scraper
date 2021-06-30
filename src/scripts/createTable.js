@@ -1,8 +1,9 @@
 const pool = require("../pg");
 
-function createTable(schema, tableName, columnTemplate) {
-  pool.query(
-    `
+async function createTable(schema, tableName, columnTemplate) {
+  try {
+    const res = await pool.query(
+      `
     CREATE TABLE IF NOT EXISTS "${schema}".${tableName} (
       ${columnTemplate.columns
         .map(
@@ -13,18 +14,14 @@ function createTable(schema, tableName, columnTemplate) {
         )
         .join()}
     );
-  `,
-    [],
-    (err) => {
-      if (err) {
-        throw new Error(
-          `Error creating "${schema}".${tableName}: ${err.message}`
-        );
-      } else {
-        console.log(`Successfully created "${schema}".${tableName}`);
-      }
-    }
-  );
+  `
+    );
+
+    console.log(`Successfully created "${schema}".${tableName}`);
+    return res;
+  } catch (err) {
+    throw new Error(`Error creating "${schema}".${tableName}: ${err.message}`);
+  }
 }
 
 module.exports = createTable;

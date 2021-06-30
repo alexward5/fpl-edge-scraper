@@ -5,7 +5,7 @@ const cleanPlayerNames = require("../helpers/cleanPlayerNames");
 const dbTableTemplates = require("../templates/dbtables.json");
 
 async function processPlayerSeasonStats(playerMetadata, schema) {
-  createTable(schema, "player_totals", dbTableTemplates.player_totals);
+  await createTable(schema, "player_totals", dbTableTemplates.player_totals);
 
   const playerSeasonStats = await csvToJSON(
     `./Fantasy-Premier-League/data/${schema}/cleaned_players.csv`
@@ -27,7 +27,7 @@ async function processPlayerSeasonStats(playerMetadata, schema) {
 
   const playerSeasonStatsString = cleanPlayerNames(playerSeasonStatsWithIds);
 
-  seedTable(
+  await seedTable(
     schema,
     "player_totals",
     dbTableTemplates.player_totals,

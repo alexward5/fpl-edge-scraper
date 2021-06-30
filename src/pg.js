@@ -10,12 +10,4 @@ const pool = new Pool({
   connectionTimeoutMillis: 2000,
 });
 
-pool.connect((err) => {
-  if (err) {
-    console.error("connection error", err.stack);
-  } else {
-    console.log("connected to database");
-  }
-});
-
 module.exports = pool;
