@@ -1,5 +1,5 @@
-const createTable = require("./createTable");
-const seedTable = require("./seedTable");
+const createTable = require("./dbFunctions/createTable");
+const seedTable = require("./dbFunctions/seedTable");
 const csvToJSON = require("../helpers/csvToJSON");
 const cleanPlayerNames = require("../helpers/cleanPlayerNames");
 const dbTableTemplates = require("../templates/dbtables.json");
