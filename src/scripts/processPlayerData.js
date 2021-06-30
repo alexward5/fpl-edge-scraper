@@ -1,4 +1,4 @@
-const csvToJSON = require("./csvToJSON");
+const csvToJSON = require("../helpers/csvToJSON");
 const processPlayerMetadata = require("./processPlayerMetadata");
 const processPlayerSeasonStats = require("./processPlayerSeasonStats");
 

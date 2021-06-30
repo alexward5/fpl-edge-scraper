@@ -1,6 +1,6 @@
 const createTable = require("./createTable");
 const seedTable = require("./seedTable");
-const cleanPlayerNames = require("./cleanPlayerNames");
+const cleanPlayerNames = require("../helpers/cleanPlayerNames");
 const dbTableTemplates = require("../templates/dbtables.json");
 
 async function processPlayerMetadata(playerMetadata, schema) {

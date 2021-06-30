@@ -4,11 +4,11 @@ async function csvToJSON(filePath) {
   const parsedJSON = await csvtojson()
     .fromFile(filePath)
     .then((json) => json)
-    .catch((err) =>
-      console.error(
+    .catch((err) => {
+      throw new Error(
         `Error converting CSV at ${filePath} to JSON: ${err.message}`
-      )
-    );
+      );
+    });
 
   return parsedJSON;
 }
