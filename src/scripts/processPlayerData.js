@@ -7,8 +7,12 @@ async function processPlayerData(season) {
     `./Fantasy-Premier-League/data/${season}/player_idlist.csv`
   );
 
-  await processPlayerMetadata(playerMetadata, season);
-  await processPlayerSeasonStats(playerMetadata, season);
+  try {
+    await processPlayerMetadata(playerMetadata, season);
+    await processPlayerSeasonStats(playerMetadata, season);
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 module.exports = processPlayerData;
