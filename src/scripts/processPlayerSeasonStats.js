@@ -11,6 +11,7 @@ async function processPlayerSeasonStats(playerMetadata, schema) {
     `./Fantasy-Premier-League/data/${schema}/cleaned_players.csv`
   );
 
+  // ID is missing in season stats CSV, so find it in metadata and add it to season stats object
   const playerSeasonStatsWithIds = playerSeasonStats.map((cleanedPlayerObj) => {
     const foundPlayer = playerMetadata.find(
       (player) =>
