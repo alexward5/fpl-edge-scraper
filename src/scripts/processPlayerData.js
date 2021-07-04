@@ -8,6 +8,7 @@ async function processPlayerData(season) {
   );
 
   try {
+    // One process function for each db table we want to create
     await processPlayerMetadata(playerMetadata, season);
     await processPlayerSeasonStats(playerMetadata, season);
   } catch (err) {
