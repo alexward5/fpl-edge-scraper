@@ -7,6 +7,7 @@ const processPlayerData = require("./scripts/processPlayerData");
 const season = "2020-21";
 
 (() => {
+  // Check if FPL data already exists locally, if not then pull the repo
   if (!fs.existsSync("./Fantasy-Premier-League")) {
     shell.exec(
       "git clone https://github.com/vaastav/Fantasy-Premier-League",
