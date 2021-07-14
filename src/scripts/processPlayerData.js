@@ -1,6 +1,7 @@
 const csvToJSON = require("../helpers/csvToJSON");
 const processPlayerMetadata = require("./processPlayerMetadata");
 const processPlayerSeasonStats = require("./processPlayerSeasonStats");
+const processGwStats = require("./processGwStats");
 
 async function processPlayerData(season) {
   const playerMetadata = await csvToJSON(
@@ -11,6 +12,7 @@ async function processPlayerData(season) {
     // One process function for each db table we want to create
     await processPlayerMetadata(playerMetadata, season);
     await processPlayerSeasonStats(playerMetadata, season);
+    await processGwStats(playerMetadata, season);
   } catch (err) {
     console.error(err);
   }
