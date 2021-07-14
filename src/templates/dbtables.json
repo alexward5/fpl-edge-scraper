@@ -1,6 +1,5 @@
 {
   "player_metadata": {
-    "table_name": "player_metadata",
     "columns": [
       {
         "column_name": "id",
@@ -18,7 +17,6 @@
     ]
   },
   "player_totals": {
-    "table_name": "player_totals",
     "columns": [
       {
         "column_name": "id",
@@ -92,6 +90,135 @@
       {
         "column_name": "element_type",
         "column_type": "text"
+      }
+    ]
+  },
+  "gameweek": {
+    "columns": [
+      {
+        "column_name": "element",
+        "column_type": "integer",
+        "primary_key": true
+      },
+      {
+        "column_name": "name",
+        "column_type": "text"
+      },
+      {
+        "column_name": "position",
+        "column_type": "text"
+      },
+      {
+        "column_name": "xp",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "assists",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "bonus",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "bps",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "clean_sheets",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "fixture",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "goals_conceded",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "goals_scored",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "ict_index",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "influence",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "creativity",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "threat",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "kickoff_time",
+        "column_type": "text"
+      },
+      {
+        "column_name": "minutes",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "opponent_team",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "own_goals",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "penalties_missed",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "saves",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "penalties_saved",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "yellow_cards",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "red_cards",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "round",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "selected",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "team_a_score",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "team_h_score",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "total_points",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "value",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "was_home",
+        "column_type": "boolean"
       }
     ]
   }
