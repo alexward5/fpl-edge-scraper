@@ -4,16 +4,14 @@ const csvToJSON = require("../helpers/csvToJSON");
 const cleanPlayerNames = require("../helpers/cleanPlayerNames");
 const dbTableTemplates = require("../templates/dbtables.json");
 
-async function processGWStats(playerMetadata, schema) {
-  const i = 1;
-
-  await createTable(schema, `gw${i}`, dbTableTemplates.gameweek);
+async function processGWStats(playerMetadata, schema, gameweek) {
+  await createTable(schema, `gw${gameweek}`, dbTableTemplates.gameweek);
 
   const gameweekStats = await csvToJSON(
-    `./Fantasy-Premier-League/data/${schema}/gws/gw${i}.csv`
+    `./Fantasy-Premier-League/data/${schema}/gws/gw${gameweek}.csv`
   );
 
-  // Replace 'xP' with 'xp' so it can be used in column name
+  // Replace 'xP' with 'xp' so it can be used in db column name
   const gameweekStatsString = cleanPlayerNames(gameweekStats).replace(
     /xP/g,
     "xp"
@@ -21,7 +19,7 @@ async function processGWStats(playerMetadata, schema) {
 
   await seedTable(
     schema,
-    `gw${i}`,
+    `gw${gameweek}`,
     dbTableTemplates.gameweek,
     gameweekStatsString
   );
