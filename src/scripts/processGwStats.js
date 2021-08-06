@@ -5,10 +5,10 @@ const cleanPlayerNames = require("../helpers/cleanPlayerNames");
 const dbTableTemplates = require("../templates/dbtables.json");
 
 async function processGWStats(schema, gameweek) {
-  await createTable(schema, `gw${gameweek}`, dbTableTemplates.gameweek);
+  await createTable(schema, `${gameweek}`, dbTableTemplates.gameweek);
 
   const gameweekStats = await csvToJSON(
-    `./Fantasy-Premier-League/data/${schema}/gws/gw${gameweek}.csv`
+    `./Fantasy-Premier-League/data/${schema}/gws/${gameweek}.csv`
   );
 
   // Replace 'xP' with 'xp' so it can be used in db column name
@@ -19,7 +19,7 @@ async function processGWStats(schema, gameweek) {
 
   await seedTable(
     schema,
-    `gw${gameweek}`,
+    `${gameweek}`,
     dbTableTemplates.gameweek,
     gameweekStatsString
   );

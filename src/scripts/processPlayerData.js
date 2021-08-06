@@ -1,3 +1,4 @@
+const fs = require("fs");
 const csvToJSON = require("../helpers/csvToJSON");
 const processPlayerMetadata = require("./processPlayerMetadata");
 const processPlayerSeasonStats = require("./processPlayerSeasonStats");
@@ -8,7 +9,15 @@ async function processPlayerData(season) {
     `./Fantasy-Premier-League/data/${season}/player_idlist.csv`
   );
 
-  const gameweeks = [1, 2, 3, 4, 5];
+  /**
+   * Each gameweek data file is formatted as gw1.csv, gw2.csv, etc.
+   * Here we create an array with one index per gameweek file, and that array is used to
+   * create a table for each gameweek named after the file with the '.csv' ending removed
+   */
+  const gameweeks = fs
+    .readdirSync(`./Fantasy-Premier-League/data/${season}/gws`)
+    .filter((fileName) => fileName.includes("gw"))
+    .map((fileName) => fileName.split(".").slice(0, 1));
 
   try {
     // One process function for each db table we want to create
