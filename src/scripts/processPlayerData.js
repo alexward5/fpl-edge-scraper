@@ -15,9 +15,7 @@ async function processPlayerData(season) {
     await processPlayerMetadata(playerMetadata, season);
     await processPlayerSeasonStats(playerMetadata, season);
     await Promise.all(
-      gameweeks.map(async (gameweek) =>
-        processGwStats(playerMetadata, season, gameweek)
-      )
+      gameweeks.map(async (gameweek) => processGwStats(season, gameweek))
     );
   } catch (err) {
     console.error(err);

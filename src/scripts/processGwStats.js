@@ -4,7 +4,7 @@ const csvToJSON = require("../helpers/csvToJSON");
 const cleanPlayerNames = require("../helpers/cleanPlayerNames");
 const dbTableTemplates = require("../templates/dbtables.json");
 
-async function processGWStats(playerMetadata, schema, gameweek) {
+async function processGWStats(schema, gameweek) {
   await createTable(schema, `gw${gameweek}`, dbTableTemplates.gameweek);
 
   const gameweekStats = await csvToJSON(
