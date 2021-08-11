@@ -10,7 +10,7 @@ async function createTable(season, tableName, columnTemplate) {
               (column) =>
                 `${column.column_name} ${column.column_type} ${
                   column.primary_key ? "PRIMARY KEY" : ""
-                }`
+                } ${column.not_null ? "NOT NULL" : ""}`
             )
             .join()}
         );
