@@ -2,6 +2,7 @@ const csvToJSON = require("../helpers/csvToJSON");
 const processPlayerMetadata = require("./processPlayerMetadata");
 const processPlayerSeasonStats = require("./processPlayerSeasonStats");
 const processGwStats = require("./processGwStats");
+const processTeamMetadata = require("./processTeamMetadata");
 
 async function processPlayerData(season) {
   const playerMetadata = await csvToJSON(
@@ -13,6 +14,7 @@ async function processPlayerData(season) {
     await processPlayerMetadata(playerMetadata, season);
     await processPlayerSeasonStats(playerMetadata, season);
     await processGwStats(season);
+    await processTeamMetadata(season);
   } catch (err) {
     console.error(err);
   } finally {

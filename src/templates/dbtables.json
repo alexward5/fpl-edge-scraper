@@ -225,5 +225,26 @@
         "column_type": "boolean"
       }
     ]
+  },
+  "team_metadata": {
+    "columns": [
+      {
+        "column_name": "id",
+        "column_type": "integer",
+        "primary_key": true
+      },
+      {
+        "column_name": "code",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "name",
+        "column_type": "text"
+      },
+      {
+        "column_name": "short_name",
+        "column_type": "text"
+      }
+    ]
   }
 }
