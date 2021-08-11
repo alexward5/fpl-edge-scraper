@@ -4,7 +4,8 @@
       {
         "column_name": "id",
         "column_type": "integer",
-        "primary_key": true
+        "primary_key": true,
+        "not_null": true
       },
       {
         "column_name": "first_name",
@@ -21,7 +22,8 @@
       {
         "column_name": "id",
         "column_type": "integer",
-        "primary_key": true
+        "primary_key": true,
+        "not_null": true
       },
       {
         "column_name": "goals_scored",
@@ -98,7 +100,8 @@
       {
         "column_name": "id",
         "column_type": "integer",
-        "primary_key": true
+        "primary_key": true,
+        "not_null": true
       },
       {
         "column_name": "element",
@@ -231,7 +234,8 @@
       {
         "column_name": "id",
         "column_type": "integer",
-        "primary_key": true
+        "primary_key": true,
+        "not_null": true
       },
       {
         "column_name": "code",
@@ -244,6 +248,74 @@
       {
         "column_name": "short_name",
         "column_type": "text"
+      }
+    ]
+  },
+  "team_understat_data": {
+    "columns": [
+      {
+        "column_name": "h_a",
+        "column_type": "text"
+      },
+      {
+        "column_name": "xg",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "npxg",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "xga",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "npxga",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "ppda",
+        "column_type": "text"
+      },
+      {
+        "column_name": "ppda_allowed",
+        "column_type": "text"
+      },
+      {
+        "column_name": "deep",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "deep_allowed",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "scored",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "missed",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "xpts",
+        "column_type": "double precision"
+      },
+      {
+        "column_name": "result",
+        "column_type": "text"
+      },
+      {
+        "column_name": "date",
+        "column_type": "date"
+      },
+      {
+        "column_name": "pts",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "npxgd",
+        "column_type": "double precision"
       }
     ]
   }
