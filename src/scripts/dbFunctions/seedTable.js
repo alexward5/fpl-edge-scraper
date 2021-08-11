@@ -1,6 +1,11 @@
 const pool = require("../../pg");
 
 async function seedTable(schema, tableName, columnTemplate, jsonString) {
+  // Remove serial primary key from column template if it exists, as it will be added automatically
+  if (columnTemplate.columns[0].column_type === "serial") {
+    columnTemplate.columns.shift();
+  }
+
   try {
     const res = await pool.query(
       `
