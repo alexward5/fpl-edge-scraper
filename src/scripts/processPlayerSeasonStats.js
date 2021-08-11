@@ -1,7 +1,7 @@
 const createTable = require("./dbFunctions/createTable");
 const seedTable = require("./dbFunctions/seedTable");
 const csvToJSON = require("../helpers/csvToJSON");
-const cleanPlayerNames = require("../helpers/cleanPlayerNames");
+const escapeQuotes = require("../helpers/escapeQuotes");
 const dbTableTemplates = require("../templates/dbtables.json");
 
 async function processPlayerSeasonStats(playerMetadata, season) {
@@ -26,7 +26,7 @@ async function processPlayerSeasonStats(playerMetadata, season) {
     return { ...playerStatsObj, id: foundPlayer.id };
   });
 
-  const playerSeasonStatsString = cleanPlayerNames(playerSeasonStatsWithIds);
+  const playerSeasonStatsString = escapeQuotes(playerSeasonStatsWithIds);
 
   await seedTable(
     season,

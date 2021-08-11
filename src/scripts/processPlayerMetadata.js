@@ -1,6 +1,6 @@
 const createTable = require("./dbFunctions/createTable");
 const seedTable = require("./dbFunctions/seedTable");
-const cleanPlayerNames = require("../helpers/cleanPlayerNames");
+const escapeQuotes = require("../helpers/escapeQuotes");
 const dbTableTemplates = require("../templates/dbtables.json");
 
 async function processPlayerMetadata(playerMetadata, season) {
@@ -10,7 +10,7 @@ async function processPlayerMetadata(playerMetadata, season) {
     dbTableTemplates.player_metadata
   );
 
-  const playerMetadataString = cleanPlayerNames(playerMetadata);
+  const playerMetadataString = escapeQuotes(playerMetadata);
 
   await seedTable(
     season,
