@@ -206,11 +206,11 @@
       },
       {
         "column_name": "team_a_score",
-        "column_type": "integer"
+        "column_type": "text"
       },
       {
         "column_name": "team_h_score",
-        "column_type": "integer"
+        "column_type": "text"
       },
       {
         "column_name": "total_points",
