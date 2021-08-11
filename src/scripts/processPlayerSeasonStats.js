@@ -4,11 +4,11 @@ const csvToJSON = require("../helpers/csvToJSON");
 const cleanPlayerNames = require("../helpers/cleanPlayerNames");
 const dbTableTemplates = require("../templates/dbtables.json");
 
-async function processPlayerSeasonStats(playerMetadata, schema) {
-  await createTable(schema, "player_totals", dbTableTemplates.player_totals);
+async function processPlayerSeasonStats(playerMetadata, season) {
+  await createTable(season, "player_totals", dbTableTemplates.player_totals);
 
   const playerSeasonStats = await csvToJSON(
-    `./Fantasy-Premier-League/data/${schema}/cleaned_players.csv`
+    `./Fantasy-Premier-League/data/${season}/cleaned_players.csv`
   );
 
   // ID is missing in season stats CSV, so find it in metadata and add it to season stats object
@@ -29,7 +29,7 @@ async function processPlayerSeasonStats(playerMetadata, schema) {
   const playerSeasonStatsString = cleanPlayerNames(playerSeasonStatsWithIds);
 
   await seedTable(
-    schema,
+    season,
     "player_totals",
     dbTableTemplates.player_totals,
     playerSeasonStatsString

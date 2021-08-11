@@ -3,9 +3,9 @@ const seedTable = require("./dbFunctions/seedTable");
 const cleanPlayerNames = require("../helpers/cleanPlayerNames");
 const dbTableTemplates = require("../templates/dbtables.json");
 
-async function processPlayerMetadata(playerMetadata, schema) {
+async function processPlayerMetadata(playerMetadata, season) {
   await createTable(
-    schema,
+    season,
     "player_metadata",
     dbTableTemplates.player_metadata
   );
@@ -13,7 +13,7 @@ async function processPlayerMetadata(playerMetadata, schema) {
   const playerMetadataString = cleanPlayerNames(playerMetadata);
 
   await seedTable(
-    schema,
+    season,
     "player_metadata",
     dbTableTemplates.player_metadata,
     playerMetadataString

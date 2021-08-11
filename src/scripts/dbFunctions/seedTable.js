@@ -1,6 +1,6 @@
 const pool = require("../../pg");
 
-async function seedTable(schema, tableName, columnTemplate, jsonString) {
+async function seedTable(season, tableName, columnTemplate, jsonString) {
   // Remove serial primary key from column template if it exists, as it will be added automatically
   if (columnTemplate.columns[0].column_type === "serial") {
     columnTemplate.columns.shift();
@@ -9,7 +9,7 @@ async function seedTable(schema, tableName, columnTemplate, jsonString) {
   try {
     const res = await pool.query(
       `
-        INSERT INTO "${schema}".${tableName}(
+        INSERT INTO "${season}".${tableName}(
           ${columnTemplate.columns.map((column) => column.column_name).join()}
         )
         SELECT *
@@ -22,10 +22,10 @@ async function seedTable(schema, tableName, columnTemplate, jsonString) {
       `
     );
 
-    console.log(`Successfully seeded "${schema}".${tableName}`);
+    console.log(`Successfully seeded "${season}".${tableName}`);
     return res;
   } catch (err) {
-    throw new Error(`Error seeding "${schema}".${tableName}: ${err.message}`);
+    throw new Error(`Error seeding "${season}".${tableName}: ${err.message}`);
   }
 }
 

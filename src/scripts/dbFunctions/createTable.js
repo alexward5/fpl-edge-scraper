@@ -1,10 +1,10 @@
 const pool = require("../../pg");
 
-async function createTable(schema, tableName, columnTemplate) {
+async function createTable(season, tableName, columnTemplate) {
   try {
     const res = await pool.query(
       `
-        CREATE TABLE IF NOT EXISTS "${schema}".${tableName} (
+        CREATE TABLE IF NOT EXISTS "${season}".${tableName} (
           ${columnTemplate.columns
             .map(
               (column) =>
@@ -17,10 +17,10 @@ async function createTable(schema, tableName, columnTemplate) {
       `
     );
 
-    console.log(`Successfully created "${schema}".${tableName}`);
+    console.log(`Successfully created "${season}".${tableName}`);
     return res;
   } catch (err) {
-    throw new Error(`Error creating "${schema}".${tableName}: ${err.message}`);
+    throw new Error(`Error creating "${season}".${tableName}: ${err.message}`);
   }
 }
 

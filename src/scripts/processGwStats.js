@@ -5,18 +5,18 @@ const csvToJSON = require("../helpers/csvToJSON");
 const cleanPlayerNames = require("../helpers/cleanPlayerNames");
 const dbTableTemplates = require("../templates/dbtables.json");
 
-async function processGWStats(schema) {
-  await createTable(schema, "gameweek_data", dbTableTemplates.gameweek);
+async function processGWStats(season) {
+  await createTable(season, "gameweek_data", dbTableTemplates.gameweek);
 
   // Here we create an array with one index per gameweek file, formatted as 'gw1.csv', 'gw2.csv', etc.
   const gameweeks = fs
-    .readdirSync(`./Fantasy-Premier-League/data/${schema}/gws`)
+    .readdirSync(`./Fantasy-Premier-League/data/${season}/gws`)
     .filter((fileName) => fileName.includes("gw"));
 
   // Aggregate all gameweek CSV data into one array with one index per gameweek
   const gameweeksArray = await Promise.all(
     gameweeks.map(async (gameweek) =>
-      csvToJSON(`./Fantasy-Premier-League/data/${schema}/gws/${gameweek}`)
+      csvToJSON(`./Fantasy-Premier-League/data/${season}/gws/${gameweek}`)
     )
   );
 
@@ -35,7 +35,7 @@ async function processGWStats(schema) {
   ).replace(/xP/g, "xp");
 
   await seedTable(
-    schema,
+    season,
     "gameweek_data",
     dbTableTemplates.gameweek,
     gameweekStatsString
