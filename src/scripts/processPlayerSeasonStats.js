@@ -12,18 +12,18 @@ async function processPlayerSeasonStats(playerMetadata, season) {
   );
 
   // ID is missing in season stats CSV, so find it in metadata and add it to season stats object
-  const playerSeasonStatsWithIds = playerSeasonStats.map((cleanedPlayerObj) => {
+  const playerSeasonStatsWithIds = playerSeasonStats.map((playerStatsObj) => {
     const foundPlayer = playerMetadata.find(
-      (player) =>
-        player.first_name === cleanedPlayerObj.first_name &&
-        player.second_name === cleanedPlayerObj.second_name
+      (playerMetadataObj) =>
+        playerMetadataObj.first_name === playerStatsObj.first_name &&
+        playerMetadataObj.second_name === playerStatsObj.second_name
     );
     if (!foundPlayer) {
       throw new Error(
-        `Error processing season stats for ${cleanedPlayerObj.first_name} ${cleanedPlayerObj.second_name}`
+        `Error processing season stats for ${playerStatsObj.first_name} ${playerStatsObj.second_name}`
       );
     }
-    return { ...cleanedPlayerObj, id: foundPlayer.id };
+    return { ...playerStatsObj, id: foundPlayer.id };
   });
 
   const playerSeasonStatsString = cleanPlayerNames(playerSeasonStatsWithIds);
