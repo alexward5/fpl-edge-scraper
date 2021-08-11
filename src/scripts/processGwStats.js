@@ -8,8 +8,7 @@ const dbTableTemplates = require("../templates/dbtables.json");
 async function processGWStats(schema) {
   await createTable(schema, "gameweek_data", dbTableTemplates.gameweek);
 
-  // Each gameweek data file is formatted as gw1.csv, gw2.csv, etc.
-  // Here we create an array with one index per gameweek file, formatted as 'gw1', 'gw2', etc.
+  // Here we create an array with one index per gameweek file, formatted as 'gw1.csv', 'gw2.csv', etc.
   const gameweeks = fs
     .readdirSync(`./Fantasy-Premier-League/data/${schema}/gws`)
     .filter((fileName) => fileName.includes("gw"));
@@ -22,12 +21,10 @@ async function processGWStats(schema) {
   );
 
   // Flatten the gameweeks array into a one dimensional array
-  // with all of the gameweek data for a particular season.
   // Each element in the array is an object with the data for a single player in a single gameweek
   const mergedGameweeks = [].concat(...gameweeksArray);
 
-  // Add unique id to each player gameweek object in our array
-  // using the gameweek number appended to the element number.
+  // Add unique id (gameweek/round number appended to the element number) to each player gameweek object in our array
   // This id is used as the primary key in our gameweek data table
   const gameweekStatsString = cleanPlayerNames(
     mergedGameweeks.map((playerData) => ({
