@@ -96,9 +96,13 @@
   "gameweek": {
     "columns": [
       {
-        "column_name": "element",
+        "column_name": "id",
         "column_type": "integer",
         "primary_key": true
+      },
+      {
+        "column_name": "element",
+        "column_type": "integer"
       },
       {
         "column_name": "name",
