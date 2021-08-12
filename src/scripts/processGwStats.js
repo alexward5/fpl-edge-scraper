@@ -31,8 +31,7 @@ async function processGWStats(season) {
       ...playerData,
       id: playerData.element.concat(playerData.round),
     }))
-    // Replace 'xP' with 'xp' so it can be used in db column name
-  ).replace(/xP/g, "xp");
+  ).toLowerCase();
 
   await seedTable(
     season,
