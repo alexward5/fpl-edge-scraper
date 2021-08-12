@@ -29,7 +29,7 @@ async function processTeamUnderstatData(teamMetadata, season) {
   );
 
   // Flatten the understat data array into a one dimensional array
-  // Each element in the array is an object with a single team's understat data for the season
+  // Each element in the array is an object with a single team's understat data for a single week
   const mergedTeams = [].concat(...teamUnderstatDataArr);
 
   const cleanedArr = escapeQuotes(mergedTeams).toLowerCase();
