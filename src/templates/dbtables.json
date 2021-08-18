@@ -250,6 +250,20 @@
   "team_understat_data": {
     "columns": [
       {
+        "column_name": "id",
+        "column_type": "text",
+        "primary_key": true,
+        "not_null": true
+      },
+      {
+        "column_name": "team_id",
+        "column_type": "integer"
+      },
+      {
+        "column_name": "gameweek",
+        "column_type": "integer"
+      },
+      {
         "column_name": "h_a",
         "column_type": "text"
       },
