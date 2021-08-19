@@ -1,6 +1,6 @@
 const createTable = require("./dbFunctions/createTable");
 const seedTable = require("./dbFunctions/seedTable");
-const dbTableTemplates = require("../templates/dbtables.json");
+const dbTableTemplates = require("../templates/db-column-template.json");
 
 async function processTeamMetadata(teamMetadata, season) {
   await createTable(season, "team_metadata", dbTableTemplates.team_metadata);

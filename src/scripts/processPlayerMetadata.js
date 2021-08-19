@@ -1,7 +1,7 @@
 const createTable = require("./dbFunctions/createTable");
 const seedTable = require("./dbFunctions/seedTable");
 const escapeQuotes = require("../helpers/escapeQuotes");
-const dbTableTemplates = require("../templates/dbtables.json");
+const dbTableTemplates = require("../templates/db-column-template.json");
 
 async function processPlayerMetadata(playerMetadata, season) {
   await createTable(

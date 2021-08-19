@@ -5,7 +5,7 @@ const parseTeamName = require("../helpers/parseTeamName");
 const checkContainsAll = require("../helpers/checkContainsAll");
 const createTable = require("./dbFunctions/createTable");
 const seedTable = require("./dbFunctions/seedTable");
-const dbTableTemplates = require("../templates/dbtables.json");
+const dbTableTemplates = require("../templates/db-column-template.json");
 
 async function processTeamUnderstatData(teamMetadata, season) {
   await createTable(

@@ -3,7 +3,7 @@ const createTable = require("./dbFunctions/createTable");
 const seedTable = require("./dbFunctions/seedTable");
 const csvToJSON = require("../helpers/csvToJSON");
 const escapeQuotes = require("../helpers/escapeQuotes");
-const dbTableTemplates = require("../templates/dbtables.json");
+const dbTableTemplates = require("../templates/db-column-template.json");
 
 async function processGWStats(season) {
   await createTable(season, "gameweek_data", dbTableTemplates.gameweek);
