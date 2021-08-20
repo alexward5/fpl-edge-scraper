@@ -47,7 +47,8 @@ async function processTeamUnderstatData(teamMetadata, season) {
         `./Fantasy-Premier-League/data/${season}/understat/${teamUnderstatFile}`
       );
 
-      // Understat data is ordered by date, so we can get the gameweek number using index + 1
+      // Understat gameweek data is ordered by date, so index 0 in the teamUnderstatDataArr corresponds with gw1
+      // Therefore we can use index + 1 to add the gameweek number to each object in our array
       return teamUnderstatData.map((teamUnderstatDataObj, index) => ({
         // Create unique id formatted as <team_id>-<gameweek>
         id: `${foundTeam.id}-${index + 1}`,
