@@ -5,8 +5,10 @@ const csvToJSON = require("../helpers/csvToJSON");
 const escapeQuotes = require("../helpers/escapeQuotes");
 const dbTableTemplates = require("../templates/db-column-template.json");
 
+const tableName = "player_gameweek_data";
+
 async function processGWStats(season) {
-  await createTable(season, "gameweek_data", dbTableTemplates.gameweek);
+  await createTable(season, tableName, dbTableTemplates[tableName]);
 
   // Here we create an array with one index per gameweek file, formatted as 'gw1.csv', 'gw2.csv', etc.
   const gameweekFiles = fs
@@ -35,8 +37,8 @@ async function processGWStats(season) {
 
   await seedTable(
     season,
-    "gameweek_data",
-    dbTableTemplates.gameweek,
+    tableName,
+    dbTableTemplates[tableName],
     gameweekStatsString
   );
 }

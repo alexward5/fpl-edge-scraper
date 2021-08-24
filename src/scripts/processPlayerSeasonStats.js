@@ -4,8 +4,10 @@ const csvToJSON = require("../helpers/csvToJSON");
 const escapeQuotes = require("../helpers/escapeQuotes");
 const dbTableTemplates = require("../templates/db-column-template.json");
 
+const tableName = "player_season_totals";
+
 async function processPlayerSeasonStats(playerMetadata, season) {
-  await createTable(season, "player_totals", dbTableTemplates.player_totals);
+  await createTable(season, tableName, dbTableTemplates[tableName]);
 
   const playerSeasonStats = await csvToJSON(
     `./Fantasy-Premier-League/data/${season}/cleaned_players.csv`
@@ -45,8 +47,8 @@ async function processPlayerSeasonStats(playerMetadata, season) {
 
   await seedTable(
     season,
-    "player_totals",
-    dbTableTemplates.player_totals,
+    tableName,
+    dbTableTemplates[tableName],
     playerSeasonStatsString
   );
 }

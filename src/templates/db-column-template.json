@@ -17,7 +17,7 @@
       }
     ]
   },
-  "player_totals": {
+  "player_season_totals": {
     "columns": [
       {
         "column_name": "id",
@@ -95,7 +95,7 @@
       }
     ]
   },
-  "gameweek": {
+  "player_gameweek_data": {
     "columns": [
       {
         "column_name": "id",

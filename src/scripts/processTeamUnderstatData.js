@@ -7,12 +7,10 @@ const createTable = require("./dbFunctions/createTable");
 const seedTable = require("./dbFunctions/seedTable");
 const dbTableTemplates = require("../templates/db-column-template.json");
 
+const tableName = "team_understat_data";
+
 async function processTeamUnderstatData(teamMetadata, season) {
-  await createTable(
-    season,
-    "team_understat_data",
-    dbTableTemplates.team_understat_data
-  );
+  await createTable(season, tableName, dbTableTemplates[tableName]);
 
   // Here we create an array with one index per understat file,
   // formatted as 'understat_Arsenal.csv', 'understat_Brighton.csv', etc.
@@ -65,12 +63,7 @@ async function processTeamUnderstatData(teamMetadata, season) {
 
   const cleanedArr = escapeQuotes(mergedTeams).toLowerCase();
 
-  await seedTable(
-    season,
-    "team_understat_data",
-    dbTableTemplates.team_understat_data,
-    cleanedArr
-  );
+  await seedTable(season, tableName, dbTableTemplates[tableName], cleanedArr);
 }
 
 module.exports = processTeamUnderstatData;
