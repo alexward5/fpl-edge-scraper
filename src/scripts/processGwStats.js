@@ -26,12 +26,12 @@ async function processGWStats(season) {
   // Each element in the array is an object with the data for a single player in a single gameweek
   const mergedGameweeks = [].concat(...gameweeksArr);
 
-  // Add unique id (gameweek/round number appended to the element number) to each player gameweek object in our array
+  // Add unique id formatted as <element number>-<gameweek/round number> to each player gameweek object in our array
   // This id is used as the primary key in our gameweek data table
   const gameweekStatsString = escapeQuotes(
     mergedGameweeks.map((playerData) => ({
       ...playerData,
-      id: playerData.element.concat(playerData.round),
+      id: `${playerData.element}-${playerData.round}`,
     }))
   ).toLowerCase();
 

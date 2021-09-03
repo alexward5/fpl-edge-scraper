@@ -99,7 +99,7 @@
     "columns": [
       {
         "column_name": "id",
-        "column_type": "integer",
+        "column_type": "text",
         "primary_key": true,
         "not_null": true
       },
