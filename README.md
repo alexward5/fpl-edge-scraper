@@ -14,4 +14,4 @@ Before running this program you will need to have either a local or remote datab
   dbpassword=[YOUR_DB_PASSWORD]
 ```
 
-Once you have a .env created with the necessary information for your database, open a terminal and install the necessary packages with `npm install`. After the packages have finished installing, run the program with `npm start` A success message will be logged in the terminal for each schema and table that was created.
+Once you have a .env created with the necessary information for your database, open a terminal and install the required packages with `npm install`. After the packages have finished installing, run the program with `npm start` A success message will be logged in the terminal for each schema and table that was created.
