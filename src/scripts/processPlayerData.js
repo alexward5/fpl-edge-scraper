@@ -1,4 +1,5 @@
 const csvToJSON = require("../helpers/csvToJSON");
+const createSchema = require("./dbFunctions/createSchema");
 const processPlayerMetadata = require("./processPlayerMetadata");
 const processPlayerSeasonStats = require("./processPlayerSeasonStats");
 const processGwStats = require("./processGwStats");
@@ -14,6 +15,8 @@ async function processPlayerData(season) {
   );
 
   try {
+    // Create schema with name specified in index.js
+    await createSchema(season);
     // One function for each db table we want to create and seed
     await processPlayerMetadata(playerMetadata, season);
     await processPlayerSeasonStats(playerMetadata, season);
