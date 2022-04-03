@@ -1,5 +1,5 @@
 const csvToJSON = require("../helpers/csvToJSON");
-const createSchema = require("./dbFunctions/createSchema");
+const createSchema = require("../dbFunctions/createSchema");
 const processPlayerMetadata = require("./processPlayerMetadata");
 const processPlayerSeasonStats = require("./processPlayerSeasonStats");
 const processGwStats = require("./processGwStats");

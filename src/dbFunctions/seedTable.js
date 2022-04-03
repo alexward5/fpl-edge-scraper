@@ -1,4 +1,4 @@
-const pool = require("../../pg");
+const pool = require("../pg");
 
 async function seedTable(season, tableName, columnTemplate, jsonString) {
   // Remove serial primary key from column template if it exists, as it will be added automatically

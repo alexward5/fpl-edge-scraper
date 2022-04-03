@@ -3,8 +3,8 @@ const escapeQuotes = require("../helpers/escapeQuotes");
 const csvToJSON = require("../helpers/csvToJSON");
 const parseTeamName = require("../helpers/parseTeamName");
 const checkContainsAll = require("../helpers/checkContainsAll");
-const createTable = require("./dbFunctions/createTable");
-const seedTable = require("./dbFunctions/seedTable");
+const createTable = require("../dbFunctions/createTable");
+const seedTable = require("../dbFunctions/seedTable");
 const dbTableTemplates = require("../templates/db-column-template.json");
 
 const tableName = "team_understat_data";

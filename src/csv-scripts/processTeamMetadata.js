@@ -1,5 +1,5 @@
-const createTable = require("./dbFunctions/createTable");
-const seedTable = require("./dbFunctions/seedTable");
+const createTable = require("../dbFunctions/createTable");
+const seedTable = require("../dbFunctions/seedTable");
 const dbTableTemplates = require("../templates/db-column-template.json");
 
 const tableName = "team_metadata";
