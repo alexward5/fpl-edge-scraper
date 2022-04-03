@@ -1,4 +1,4 @@
-const pool = require("../../pg");
+const pool = require("../pg");
 
 async function createTable(season, tableName, columnTemplate) {
   try {
