@@ -6,7 +6,7 @@ const processGwStats = require("./processGwStats");
 const processTeamMetadata = require("./processTeamMetadata");
 const processTeamUnderstatData = require("./processTeamUnderstatData");
 
-async function processPlayerData(season) {
+async function processCSVData(season) {
   const playerMetadata = await csvToJSON(
     `./Fantasy-Premier-League/data/${season}/player_idlist.csv`
   );
@@ -30,4 +30,4 @@ async function processPlayerData(season) {
   }
 }
 
-module.exports = processPlayerData;
+module.exports = processCSVData;
