@@ -48,9 +48,7 @@ class FBRefTable {
                 tableRowsJSON.push(rowJSON);
             });
         } catch (err) {
-            console.error(`Error creating JSON from table ${this.tableURL}[${this.tableIndex}]: ${err.message}`);
-        } finally {
-            console.log(`Finished creating JSON from table ${this.tableURL}[${this.tableIndex}]`);
+            throw new Error(`Unable to create JSON from table ${this.tableURL}[${this.tableIndex}]: ${err.message}`);
         }
 
         return tableRowsJSON;
