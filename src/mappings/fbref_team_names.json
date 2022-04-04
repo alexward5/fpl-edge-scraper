@@ -1,0 +1,102 @@
+{
+    "Arsenal": {
+        "fplId": 1,
+        "fplName": "Arsenal",
+        "shortFplName": "ARS"
+    },
+    "Aston Villa": {
+        "fplId": 2,
+        "fplName": "Aston Villa",
+        "shortFplName": "AVL"
+    },
+    "Brentford": {
+        "fplId": 3,
+        "fplName": "Brentford",
+        "shortFplName": "BRE"
+    },
+    "Brighton": {
+        "fplId": 4,
+        "fplName": "Brighton",
+        "shortFplName": "BHA"
+    },
+    "Burnley": {
+        "fplId": 5,
+        "fplName": "Burnley",
+        "shortFplName": "BUR"
+    },
+    "Chelsea": {
+        "fplId": 6,
+        "fplName": "Chelsea",
+        "shortFplName": "CHE"
+    },
+    "Crystal Palace": {
+        "fplId": 7,
+        "fplName": "Crystal Palace",
+        "shortFplName": "CRY"
+    },
+    "Everton": {
+        "fplId": 8,
+        "fplName": "Everton",
+        "shortFplName": "EVE"
+    },
+    "Leicester City": {
+        "fplId": 9,
+        "fplName": "Leicester",
+        "shortFplName": "LEI"
+    },
+    "Leeds United": {
+        "fplId": 10,
+        "fplName": "Leeds",
+        "shortFplName": "LEE"
+    },
+    "Liverpool": {
+        "fplId": 11,
+        "fplName": "Liverpool",
+        "shortFplName": "LIV"
+    },
+    "Manchester City": {
+        "fplId": 12,
+        "fplName": "Man City",
+        "shortFplName": "MCI"
+    },
+    "Manchester Utd": {
+        "fplId": 13,
+        "fplName": "Man Utd",
+        "shortFplName": "MUN"
+    },
+    "Newcastle Utd": {
+        "fplId": 14,
+        "fplName": "Newcastle",
+        "shortFplName": "NEW"
+    },
+    "Norwich City": {
+        "fplId": 15,
+        "fplName": "Norwich",
+        "shortFplName": "NOR"
+    },
+    "Southampton": {
+        "fplId": 16,
+        "fplName": "Southampton",
+        "shortFplName": "SOU"
+    },
+    "Tottenham": {
+        "fplId": 17,
+        "fplName": "Spurs",
+        "shortFplName": "TOT"
+    },
+    "Watford": {
+        "fplId": 18,
+        "fplName": "Watford",
+        "shortFplName": "WAT"
+    },
+    "West Ham": {
+        "fplId": 19,
+        "fplName": "West Ham",
+        "shortFplName": "WHU"
+    },
+    "Wolves": {
+        "fplId": 20,
+        "fplName": "Wolves",
+        "shortFplName": "WOL"
+    }
+}
