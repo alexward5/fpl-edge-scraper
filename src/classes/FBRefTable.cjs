@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const JSSoup = require("jssoup").default;
+var JSSoup = require("jssoup").default;
 
 class FBRefTable {
     constructor(tableURL, tableIndex) {

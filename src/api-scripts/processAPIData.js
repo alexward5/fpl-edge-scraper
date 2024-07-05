@@ -1,4 +1,5 @@
-const FBRefTable = require("../classes/FBRefTable");
+// const FBRefTable = require("../classes/FBRefTable");
+import FBRefTable from "../classes/FBRefTable.cjs";
 
 async function processAPIData() {
     try {
@@ -12,4 +13,4 @@ async function processAPIData() {
     }
 }
 
-module.exports = processAPIData;
+export default processAPIData;
