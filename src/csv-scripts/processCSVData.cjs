@@ -26,4 +26,4 @@ async function processCSVData(season) {
     }
 }
 
-module.exports.default = processCSVData;
+module.exports = processCSVData;
